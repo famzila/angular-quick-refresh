@@ -9,14 +9,11 @@ import { GuidesService } from './services/guides.service';
 })
 export class AppComponent implements OnInit{
   title = 'Angular Quick Refresh';
-  guides: IGuide[]= [];
 
-  constructor( private guidesService: GuidesService ){
+  constructor(){
 
   }
 
   ngOnInit(): void {
-    this.guides= this.guidesService.getCourses();
-    console.log(this.guides)
   }
 }

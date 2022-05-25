@@ -9,7 +9,7 @@ export class TruncatePipe implements PipeTransform {
     if(text === undefined){
       return text;
     }
-    return text.substring(0, 60).concat('...');
+    return text.substring(0, 60).concat(' ...');
   }
 
 }

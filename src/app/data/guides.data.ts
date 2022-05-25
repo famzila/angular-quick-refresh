@@ -1,16 +1,16 @@
 export const courses = [
     {
-        title: "Top-level Overview",
+        title: "Hight-level Look",
         imgPath: "./assets/cards/overview.png",
         description:"Learn about how Angular app is launched, its architecture and conf files"
     },
     {
-        title: "Module",
+        title: "Modules",
         imgPath: "./assets/cards/modules.png",
         description:"What are modules in Angular and how you create and use them"
     },
     {
-        title: "Routing and navigation",
+        title: "Routing and Navigation",
         imgPath: "./assets/cards/route.png",
         description:"What is a route in Angular and how we can navigate in an Angular app"
     },
@@ -40,7 +40,7 @@ export const courses = [
         description:"How and when to create a service and how to use it"
     },
     {
-        title: "Unit test",
+        title: "Unit Test",
         imgPath: "./assets/cards/utest.png",
         description:"Test your app blocks and features with unit tests"
     },
@@ -50,7 +50,7 @@ export const courses = [
         description:"Test your app by simulating a user's interaction with your web application"
     },
     {
-        title: "Reactive programming",
+        title: "Reactive Programming",
         imgPath: "./assets/cards/reactive.png",
         description:"How to build a reactive app with RxJS Observables"
     },
@@ -65,7 +65,7 @@ export const courses = [
         description:"Build a deep understaing of Angular by learning its DI system"
     },
     {
-        title: "Compilation overview",
+        title: "Compilation Overview",
         imgPath: "./assets/cards/compilation.png",
         description:"Have an overview about how Angular app is compiled"
     },

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GuidesService } from '../services/guides.service';
 import { IGuide } from './guide-card/guide-card.model';
 
 @Component({
@@ -7,11 +8,14 @@ import { IGuide } from './guide-card/guide-card.model';
   styleUrls: ['./guides.component.scss']
 })
 export class GuidesComponent implements OnInit {
+  guides: IGuide[]= [];
 
-  @Input() guides: IGuide[] = [];
-  constructor() { }
+  constructor( private guidesService: GuidesService ){
+
+  }
 
   ngOnInit(): void {
+    this.guides= this.guidesService.getCourses();
   }
 
 }

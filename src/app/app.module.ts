@@ -9,6 +9,8 @@ import { GuidesService } from './services/guides.service';
 import { GuidesComponent } from './guides/guides.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { GuideContentComponent } from './guides/guide-content/guide-content.component';
+import { GuideListComponent } from './guides/guide-list/guide-list.component';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     GuideCardComponent,
     GuidesComponent,
+    GuideContentComponent,
+    GuideListComponent,
   ],
   imports: [
     BrowserModule,
