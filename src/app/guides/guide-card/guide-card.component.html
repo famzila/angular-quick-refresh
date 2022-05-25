@@ -1,0 +1,12 @@
+
+<mat-card class="card"  defaultElevation="2" raisedElevation="16">
+  <mat-card-title class="title" color="primary">{{ guide?.title}}</mat-card-title>
+  <img mat-card-image [src]="guide?.imgPath" [alt]="guide?.title">
+  <mat-card-content>
+    <p>{{guide?.description | truncate }}</p>
+  </mat-card-content>
+  <!-- <mat-card-actions>
+    <mat-icon>star</mat-icon>
+    <mat-icon>share</mat-icon>
+  </mat-card-actions> -->
+</mat-card>

@@ -1,0 +1,26 @@
+.card {
+    max-width: 400px;
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+    width: 280px;
+    text-align: center;
+    padding: 30px;
+}
+
+:host :hover{
+    background-color: #ecedf1;
+}
+:host * {
+    color: #0000008a;
+}
+
+img {
+    width: 40%;
+    height: 40%;
+    margin: 15px auto;
+}
+
+.title{
+    padding: 10px;
+}

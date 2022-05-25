@@ -1,10 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IGuide } from './guides/guide-card/guide-card.model';
+import { GuidesService } from './services/guides.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'AngularQuickRefresh';
+export class AppComponent implements OnInit{
+  title = 'Angular Quick Refresh';
+  guides: IGuide[]= [];
+
+  constructor( private guidesService: GuidesService ){
+
+  }
+
+  ngOnInit(): void {
+    this.guides= this.guidesService.getCourses();
+    console.log(this.guides)
+  }
 }
