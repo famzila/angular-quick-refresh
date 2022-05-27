@@ -1,1 +1,111 @@
-<h1>{{ contentTitle }}</h1>
+<section class="container">
+  
+  <article>
+    <h1>{{ contentTitle }}</h1>
+    <p>
+      Do you wonder how an Angular application starts? Do you wonder about what
+      happens behind the scenes? Dear reader, this article is for you! The story
+      starts from a file. Oh yeah, every angular application starts thanks to
+      the angular.json. It's not the application's entry door, but an Angular
+      app starts thanks to this configuration file.
+    </p>
+    <h2>What's the entry point?</h2>
+    <p>
+      If you are using an old version of Angular such as Angular 4 or 5, you'll
+      notice that you don't have this file. Instead, you have angular-cli.json.
+      No worries, it the same file! It just got renamed in the recent versions
+      of Angular. The angular.json contains all the configurations of the app.
+      The Angular builder will look at this file to find the entry door of the
+      application. Good, we found the entry ^^ Now, let's dive in and see what
+      this file contains. Here is an example of an angular.json example:
+    </p>
+    <code data-gist-id="d11531c7399ce827403fb3ad24fdffe4"></code>
+    <p>
+      This file is like human DNA. We know based on this file which UI library
+      we are using, the builder we use to build the app, the path to the index
+      file, path to the polyfills, the type of the compiler, the assets we are
+      using, and so on. 👀Note: By the way, I usually start by looking at this
+      file and the package.json file whenever I start a new mission with a new
+      Angular app. It gives me a global view of initial information about the
+      app. Sometimes, you can also detect if there are some strange things in
+      the app (ex. having multiple UI libraries in the styles' array ). You can
+      expect then that the app may need some cleaning. In the build section,
+      you'll find the main option. This is where we specify the entry to the
+      application by providing the path of the <code>main.ts</code> file. So
+      this file is mandatory to start the app. If you have created the app by
+      using the Angular CLI, everything will be set and generated for you.
+    </p>
+    <h2>The <code>main.js</code></h2>
+    <code data-gist-id="b745706ad703a0cc3e7dbf7459d905d7"></code>
+    <p>
+      As you can see, this file's job is to create a browser environment for the
+      application. Followed by the call of the bootstrapModule. After then, the
+      app is bootstrapped. Wait a minute. I skipped something. Nah? How is the
+      app being bootstrapped, and what's even bootstrapped?
+    </p>
+    <code data-gist-id="de5e113f890cda3fda83411a2188e54b"></code>
+    <h2>App's door is open. What's bootstrapping?</h2>
+    <p>
+      Every application has at least one Angular module. The root module that
+      you bootstrap to launch the application is called a bootstrapping module.
+      Thus, bootstrapping is a mechanism or a technique of loading and launching
+      an Angular application. It's when we load the component or the module that
+      will be rendered. Now that we found the door. The main.ts have done its
+      job by executing the step below by the builder:
+    </p>
+    <code>platformBrowserDynamic().bootstrapModule(AppModule)</code>
+    <p>
+      You may have noticed that we pass in the AppModule. The real app code!
+      Yes, in fact, this is the code that contains our application. The
+      AppModule is nothing but all declarations, components, services, and all
+      the code related to our app. Let's check the famous AppModule file:
+    </p>
+    <code data-gist-id="641691d62a70c06e6f4ec007647409e6"></code>
+    <p>
+      In the App module, at @NgModule decorator array, we have a bootstrap
+      Array. Here the bootstrap component is provided or added, so at this
+      point, Angular loads AppComponent. But, you may wonder, from the root
+      component to a working page, that something is missing. Nah? How is it
+      read and understood by the browser? The browser only knows HTML, CSS, and
+      JS, right? The app is coded in Typescript. So there is something else that
+      happens.
+    </p>
+    <h2>App's home is open. How do we open a room inside?</h2>
+    <p>Below is an example of the app.component.ts file:</p>
+    <code data-gist-id="b1dbb6b4379b86421d66e8b5a56b3190"></code>
+    <p>Each component is declared with three properties:</p>
+    <ul>
+      <li>1. Selector — used for accessing the component</li>
+      <li>2. Template/TemplateURL — contains HTML of the component</li>
+      <li>3. StylesURL — contains component-specific stylesheets</li>
+    </ul>
+    After this,
+    <p>
+      Angular calls the index.html file. By the way, Angular is a framework that
+      allows us to create “Single Page Applications”, and here the index.html is
+      the single page that was provided by the server.<br />
+      This file consequently calls the root component that is app-root. The root
+      component is defined in app.component.ts. This is how the index.html file
+      looks:
+    </p>
+    <code data-gist-id="966f4e69c05eefb1ebc47bfd067303c1"></code>
+    <p>
+      The HTML template of the root component is displayed inside the app-root
+      tags. Okay, right now, we know how the main page or home page is rendered.
+      How are other pages and other components rendered? First, index.html is
+      always rendered. Whatever we do, t's the index.html that is the main
+      template. What changes is what's inside the app-root tags based on the
+      URL. And here comes the app.routing.module.ts to the scenes. The
+      corresponding component to the typed URL will be rendered inside the
+      app-root tags and so on thanks to the Router-outlet inside the
+      app.component.html template:
+    </p>
+    <code data-gist-id="35443ea480294dee91f8011cc16af695"></code>
+    <img
+      alt="What happens when the URL changes"
+      src="./assets/content-illustations/high-level-1.png"
+      width="50%"
+    />
+  </article>
+  <table-of-content></table-of-content>
+</section>
