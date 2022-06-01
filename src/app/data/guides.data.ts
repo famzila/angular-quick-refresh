@@ -74,4 +74,13 @@ export const courses = [
     //     imgPath: "./assets/cards/modules.png",
     //     description:""
     // },
+];
+
+
+export const tableOfContentHighLevel = [
+    {title: "Introduction", tag:"#introduction"},
+    {title:"What's the entry point", tag:"#subtitle1"},
+    {title:"App's door is open. What's bootstrapping?", tag:"#subtitle2"},
+    {title:"App's home is open. How do we open a room inside?", tag:"#subtitle3"},
+    {title:"When the URL changes...", tag:"#subtitle4"}
 ]

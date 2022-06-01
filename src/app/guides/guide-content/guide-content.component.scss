@@ -66,6 +66,10 @@ p {
 
 .container{
     display: flex;
-    flex-direction: rows;
     overflow: visible;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
 }

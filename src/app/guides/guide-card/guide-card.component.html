@@ -1,5 +1,6 @@
 
-<mat-card class="card"  defaultElevation="2" raisedElevation="16" [routerLink]="['/guide/' + guide?.title]">
+<!-- <mat-card class="card"  defaultElevation="2" raisedElevation="16" [routerLink]="['/guide/' + guide?.title]"> -->
+<mat-card class="card"  defaultElevation="2" raisedElevation="16" (click)="openDialog()">
   <mat-card-title class="title" color="primary">{{ guide?.title}}</mat-card-title>
   <img mat-card-image [src]="guide?.imgPath" [alt]="guide?.title">
   <mat-card-content>

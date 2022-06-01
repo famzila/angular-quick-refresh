@@ -1,21 +1,8 @@
 <aside>
     <h3>Overview Content</h3>
-    <nav>
-        <a href="/html/">HTML</a>
-        <a href="/css/">CSS</a>
-        <a href="/js/">JavaScript</a>
-        <a href="/python/">Python</a>
-        <a href="/html/">HTML</a>
-        <a href="/css/">CSS</a>
-        <a href="/js/">JavaScript</a>
-        <a href="/python/">Python</a>
-        <a href="/html/">HTML</a>
-        <a href="/css/">CSS</a>
-        <a href="/js/">JavaScript</a>
-        <a href="/python/">Python</a>
-        <a href="/html/">HTML</a>
-        <a href="/css/">CSS</a>
-        <a href="/js/">JavaScript</a>
-        <a href="/python/">Python</a>
+    <nav >
+        <ng-container *ngFor="let content of contentList" >
+            <a [href]="content.tag">{{ content.title }}</a>
+        </ng-container>
     </nav>
 </aside>

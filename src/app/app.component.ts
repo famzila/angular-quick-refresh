@@ -8,7 +8,7 @@ import { GuidesService } from './services/guides.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'Angular Quick Refresh';
+  title = 'Angular Stories';
 
   constructor(){
 
